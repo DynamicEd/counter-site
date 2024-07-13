@@ -1,0 +1,11 @@
+@media all and (max-width: 400px)   {
+    .total-delivered {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        align-items: center;
+        justify-items: center;
+    }
+    .total-delivered > * {
+        text-align: center;
+    }
+}

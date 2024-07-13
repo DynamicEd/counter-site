@@ -1,144 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Libre+Barcode+39+Extended+Text&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="index.css">
-        <title>Drake Transport Foundation</title>
+        <link rel="stylesheet" href="./css/counter.css">
+        <link rel="stylesheet" href="./css/media.css">
+        <title>Drake Cargo Log Sheet</title>
     </head>
     <body>
-        <div class="container">
-            <!-- Page Header -->
-            <h1>🛰️</h1>
-            <h3>[Drake Transport Foundation]</h3>
-            <h1>Courier Log Book</h1>
-            <h2 id="my-date"></h2>
+        <!-- Page Header -->
+        <h1>🛰️</h1>
+        <h3>[Drake Transport Foundation]</h3>
+        <h1>Courier Log Book</h1>
+        <h2 id="my-date">My Date</h2>
 
-            <!-- Cargo Log Sheet -->
-            <div class="card">
+        <!-- Cargo Log Sheet -->
+        <div class="card">
 
-                <div class="total-delivered">
-                    <hr class="divider">
-                    <!-- Total Delivery Count -->
-                    <p class="italic left">Deliveries Completed
-                        <span id="total-delivered" class="total right">Total</span>
-                    </p>
-                    <hr class="divider">
-                    <!-- Total Delivery Count -->
-                    <!-- <p class="italic left">Total Sales
-                        <span id="total-sales" class="total right">Total</span>
-                    </p>
-                    <hr class="divider"> -->
-                </div>
+            <div class="total-delivered">
+                <!-- Total Delivery Count -->
+                <p class="italic left">Deliveries Completed</p>
+                <p id="total-delivered" class="total right">Total</p>
+            </div>
                 
-                <!-- Delivery Options -->
-                <div class="delivery-options">
-                    <button
-                        id="new-delivery"
-                        onclick="deliveryNew()"
-                        class="delivery-btn-new">Add
-                    </button>
-                    <button
-                        id="cancel-delivery"
-                        onclick="deliveryCancel()"
-                        class="delivery-btn-cancel">Remove
-                    </button>
-                </div>
-
-                <!-- Packages -->
-                <div id="package-size" class="package-size hidden">
-                    <!-- Personal -->
-                    <button
-                        id="package-personal"
-                        onclick="deliveryPersonal()"
-                        class="package-btn">
-                        <p class="btn-title">Personal</p>
-                        <p class="btn-sub">1 Unit(s)</p>
-                    </button>
-
-                    <!-- Small -->
-                    <button
-                        id="package-small"
-                        onclick="deliverySmall()"
-                        class="package-btn">
-                        <p class="btn-title">Small</p>
-                        <p class="btn-sub">2 Unit(s)</p>
-                    </button>
-
-                    <!-- Medium -->
-                    <button
-                        id="package-medium"
-                        onclick="deliveryMedium()"
-                        class="package-btn">
-                        <p class="btn-title">Medium</p>
-                        <p class="btn-sub">4 Unit(s)</p>
-                    </button>
-
-                    <!-- Large -->
-                    <button
-                        id="package-large"
-                        onclick="deliveryLarge()"
-                        class="package-btn">
-                        <p class="btn-title">Large</p>
-                        <p class="btn-sub">10 Unit(s)</p>
-                    </button>
-                </div>
-                <!-- End Packages -->
-
-                <!-- Cancel Delivery -->
-                <div id="package-remove" class="package-remove hidden">
-                    <!-- Remove Last Delivery -->
-                    <button
-                        id="remove-last"
-                        onclick="removeLast()"
-                        class="package-btn">
-                        <h2>Remove Last</h2>
-                        <h2>Delivery</h2>
-                        [ <span 
-                            id="remove-last-count"
-                            class="btn-sub">
-                            No Deliveries
-                        </span> ]
-                    </button>
-
-                    <!-- Clear All Deliveries -->
-                    <button
-                        id="clear-all"
-                        onclick="clearData()"
-                        class="package-btn">
-                        <h2>Delete All</h2>
-                        <h2>Data</h2>
-                    </button>
-                </div>
-                <!-- End Packages -->
-
-                <!-- Confirm Clear Data -->
-                <div id="package-remove-check" class="package-remove-check hidden">
-                    <!-- Remove Last Delivery -->
-                    <button
-                        id="remove-yes"
-                        onclick="clearYes()"
-                        class="package-btn">
-                        <h2>Remove</h2>
-                    </button>
-
-                    <!-- Clear All Deliveries -->
-                    <button
-                        id="remove-no"
-                        onclick="clearNo()"
-                        class="package-btn">
-                        <h2>Cancel</h2>
-                    </button>
-                </div>
-                <!-- End Packages -->
+            <!-- Delivery Options -->
+            <div class="delivery-options">
+                <button
+                    id="new-delivery"
+                    onclick="deliveryNew()"
+                    class="delivery-btn-new">Add
+                </button>
+                <button
+                    id="cancel-delivery"
+                    onclick="deliveryCancel()"
+                    class="delivery-btn-cancel">Remove
+                </button>
             </div>
 
-            <!-- Sales & Credits Earned -->
+            <!-- Packages -->
+            <div id="package-size" class="package-size hidden">
+                <!-- Personal -->
+                <button
+                    id="package-personal"
+                    onclick="deliveryPersonal()"
+                    class="package-btn">
+                    <p class="btn-title">Personal</p>
+                    <p class="btn-sub">1 Unit(s)</p>
+                </button>
 
-            <!-- Footer -->
-            <footer>DTF</footer>
+                <!-- Small -->
+                <button
+                    id="package-small"
+                    onclick="deliverySmall()"
+                    class="package-btn">
+                    <p class="btn-title">Small</p>
+                    <p class="btn-sub">2 Unit(s)</p>
+                </button>
+
+                <!-- Medium -->
+                <button
+                    id="package-medium"
+                    onclick="deliveryMedium()"
+                    class="package-btn">
+                    <p class="btn-title">Medium</p>
+                    <p class="btn-sub">4 Unit(s)</p>
+                </button>
+
+                <!-- Large -->
+                <button
+                    id="package-large"
+                    onclick="deliveryLarge()"
+                    class="package-btn">
+                    <p class="btn-title">Large</p>
+                    <p class="btn-sub">10 Unit(s)</p>
+                </button>
+            </div>
+            <!-- End Packages -->
+
+            <!-- Cancel Delivery -->
+            <div id="package-remove" class="package-remove hidden">
+                <!-- Remove Last Delivery -->
+                <button
+                    id="remove-last"
+                    onclick="removeLast()"
+                    class="package-btn">
+                    <h2>Remove Last</h2>
+                    <h2>Delivery</h2>
+                    [ <span 
+                        id="remove-last-count"
+                        class="btn-sub">
+                        No Deliveries
+                    </span> ]
+                </button>
+
+                <!-- Clear All Deliveries -->
+                <button
+                    id="clear-all"
+                    onclick="clearData()"
+                    class="package-btn">
+                    <h2>Delete All</h2>
+                    <h2>Data</h2>
+                </button>
+            </div>
+            <!-- End Cancel Delivery -->
+
         </div>
-        <script src="index.js"></script>
+
+        <!-- Footer -->
+        <footer>DTF</footer>
+        <script src="./js/index.js"></script>
     </body>
 </html>
